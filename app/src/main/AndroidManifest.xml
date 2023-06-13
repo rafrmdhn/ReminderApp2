@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+	<uses-permission android:name="android.permission.INTERNET"/>
+
+
+	<application
+		android:allowBackup="true"
+		android:theme="@style/AppTheme"
+		android:label="@string/app_name" >
+		<activity
+		android:name=".welcome_page_activity"
+		android:configChanges="orientation|keyboardHidden|screenSize"
+		android:label="@string/app_name"
+		android:exported="false"  >
+
+		</activity>
+		<activity
+		android:name=".login_page_activity"
+		android:configChanges="orientation|keyboardHidden|screenSize"
+			android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity
+			android:name=".create_account_screen_activity"
+			android:configChanges="orientation|keyboardHidden|screenSize"
+			android:exported="false">
+		</activity>
+		<activity
+			android:name=".verified_activity"
+			android:configChanges="orientation|keyboardHidden|screenSize"
+			android:exported="false">
+		</activity>
+		<activity
+			android:name=".all_tasks_page_activity"
+			android:configChanges="orientation|keyboardHidden|screenSize"
+			android:exported="false">
+		</activity>
+		<activity
+			android:name=".home_page_activity"
+			android:configChanges="orientation|keyboardHidden|screenSize"
+			android:exported="false">
+		</activity>
+		<activity
+			android:name=".calendar"
+			android:configChanges="orientation|keyboardHidden|screenSize"
+			android:exported="false">
+		</activity>
+		<activity
+			android:name=".detail_calendar_activity"
+			android:configChanges="orientation|keyboardHidden|screenSize"
+			android:exported="false">
+		</activity>
+		<activity
+			android:name=".edit_events_activity"
+			android:configChanges="orientation|keyboardHidden|screenSize"
+			android:exported="false">
+		</activity>
+
+	</application>
+
+</manifest>
+	
+	

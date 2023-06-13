@@ -1,0 +1,264 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="wrap_content" >
+
+	<RelativeLayout
+		android:id="@+id/create_account_screen"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<RelativeLayout
+			android:id="@+id/content_container"
+			android:layout_width="match_parent"
+			android:layout_height="820dp">
+
+			<View
+				android:id="@+id/_bg__create_account_screen"
+				android:layout_width="match_parent"
+				android:layout_height="802dp"
+				android:layout_marginStart="0dp"
+				android:layout_marginTop="0dp"
+				android:background="@drawable/_bg__create_account_screen_shape" />
+
+
+			<RelativeLayout
+				android:id="@+id/username"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="32.5dp"
+				android:layout_marginTop="265dp">
+
+				<View
+					android:id="@+id/rectangle_3"
+					android:layout_width="325dp"
+					android:layout_height="50dp"
+					android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:background="@drawable/rectangle_3_shape" />
+
+				<EditText
+					android:id="@+id/username_ek1"
+					android:layout_width="250dp"
+					android:layout_height="50dp"
+					android:layout_marginLeft="26dp"
+					android:layout_marginTop="0dp"
+					android:hint="@string/username_ek1_string"
+					android:textColor="@color/_bg__create_account_screen_color"
+					android:textSize="17sp" />
+
+			</RelativeLayout>
+
+
+			<RelativeLayout
+				android:id="@+id/phone"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="32.5dp"
+				android:layout_marginTop="331dp">
+
+				<View
+					android:id="@+id/rectangle_4"
+					android:layout_width="325dp"
+					android:layout_height="50dp"
+					android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:background="@drawable/rectangle_4_shape" />
+
+				<EditText
+					android:id="@+id/phone_number"
+					android:layout_width="250dp"
+					android:layout_height="50dp"
+					android:layout_marginLeft="26dp"
+					android:layout_marginTop="0dp"
+					android:hint="@string/phone_number_string"
+					android:textColor="@color/_bg__create_account_screen_color"
+					android:textSize="17sp" />
+
+			</RelativeLayout>
+
+
+			<RelativeLayout
+				android:id="@+id/pass"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="32.5dp"
+				android:layout_marginTop="398dp">
+
+				<View
+					android:id="@+id/rectangle_5"
+					android:layout_width="325dp"
+					android:layout_height="50dp"
+					android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:background="@drawable/rectangle_5_shape" />
+
+				<EditText
+					android:id="@+id/password"
+					android:layout_width="250dp"
+					android:layout_height="50dp"
+					android:layout_marginLeft="26dp"
+					android:layout_marginTop="0dp"
+					android:inputType="textPassword"
+					android:hint="@string/password_string"
+					android:textColor="@color/_bg__create_account_screen_color"
+					android:textSize="17sp" />
+
+			</RelativeLayout>
+
+
+			<RelativeLayout
+				android:id="@+id/heading"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="32.5dp"
+				android:layout_marginTop="102dp">
+
+				<TextView
+					android:id="@+id/create_your"
+					android:layout_width="211.5dp"
+					android:layout_height="63.5dp"
+					android:layout_marginLeft="7dp"
+					android:layout_marginTop="0dp"
+					android:text="@string/create_your_string"
+					android:textColor="@color/rectangle_3_color"
+					android:textSize="33sp" />
+
+				<TextView
+					android:id="@+id/account__today_"
+					android:layout_width="321.5dp"
+					android:layout_height="70.5dp"
+					android:layout_marginLeft="0dp"
+					android:layout_marginTop="30dp"
+					android:text="@string/account__today__string"
+					android:textColor="@color/account__today__color"
+					android:textSize="37sp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:id="@+id/please_fill_in_your_correct_details_"
+					android:layout_width="276dp"
+					android:layout_height="35dp"
+					android:layout_marginLeft="0dp"
+					android:layout_marginTop="88dp"
+					android:text="@string/please_fill_in_your_correct_details__string"
+					android:textColor="@color/rectangle_3_color"
+					android:textSize="18sp" />
+
+			</RelativeLayout>
+
+
+			<RelativeLayout
+				android:id="@+id/create_2_btn"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="32.5dp"
+				android:layout_marginTop="471dp">
+
+				<View
+					android:id="@+id/rectangle_5_ek1"
+					android:layout_width="325dp"
+					android:layout_height="50dp"
+					android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:background="@drawable/rectangle_5_ek1_shape" />
+
+				<TextView
+					android:id="@+id/create_account"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="92dp"
+					android:layout_marginTop="13dp"
+					android:text="@string/create_account_string"
+					android:textColor="@color/rectangle_3_color"
+					android:textSize="20sp" />
+
+			</RelativeLayout>
+
+
+			<RelativeLayout
+				android:id="@+id/google"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="32.5dp"
+				android:layout_marginTop="568dp">
+
+				<View
+					android:id="@+id/rectangle_5_ek2"
+					android:layout_width="325dp"
+					android:layout_height="50dp"
+					android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:background="@drawable/rectangle_5_ek2_shape" />
+
+				<TextView
+					android:id="@+id/continue_with_google"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="57dp"
+					android:layout_marginTop="13dp"
+					android:text="@string/continue_with_google_string"
+					android:textColor="@color/rectangle_3_color"
+					android:textSize="20sp" />
+
+			</RelativeLayout>
+
+			<TextView
+				android:id="@+id/or"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="180dp"
+				android:layout_marginTop="527dp"
+				android:text="@string/or_string"
+				android:textColor="@color/rectangle_3_color"
+				android:textSize="25sp" />
+
+
+			<RelativeLayout
+				android:id="@+id/eva_arrow_back_fill"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="37dp"
+				android:layout_marginTop="35dp">
+
+				<ImageView
+					android:id="@+id/vector"
+					android:layout_width="22dp"
+					android:layout_height="19.25dp"
+					android:layout_marginStart="5.5dp"
+					android:layout_marginTop="6.87dp"
+					android:contentDescription="vector"
+					android:src="@drawable/vector" />
+
+			</RelativeLayout>
+
+
+			<RelativeLayout
+				android:id="@+id/signin"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="32.5dp"
+				android:layout_marginTop="636dp">
+
+				<View
+					android:id="@+id/rectangle_5_ek3"
+					android:layout_width="329dp"
+					android:layout_height="54dp"
+					android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:background="@drawable/rectangle_5_ek3_shape" />
+
+				<TextView
+					android:id="@+id/sign_in_to_your_account"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="58dp"
+					android:layout_marginTop="13dp"
+					android:text="@string/sign_in_to_your_account_string"
+					android:textColor="@color/account__today__color"
+					android:textSize="20sp" />
+
+			</RelativeLayout>
+
+		</RelativeLayout>
+
+	</RelativeLayout>
+</RelativeLayout>

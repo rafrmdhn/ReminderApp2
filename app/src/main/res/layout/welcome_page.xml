@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="match_parent" >
+	<ScrollView android:id="@+id/welcome_page" 
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" >
+
+		<RelativeLayout android:id="@+id/content_container" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" >
+
+			<View
+				android:id="@+id/__bg__welcome_page"
+				android:layout_width="415dp"
+				android:layout_height="735dp"
+				android:layout_marginStart="0dp"
+				android:layout_marginTop="0dp"
+				android:background="@drawable/__bg__welcome_page_shape" />
+
+			<ImageView
+				android:id="@+id/akoto_1"
+				android:layout_width="405dp"
+				android:layout_height="314dp"
+				android:layout_marginStart="-4dp"
+				android:layout_marginTop="210dp"
+				android:contentDescription="akoto_1"
+				android:src="@drawable/akoto_1" />
+
+		</RelativeLayout>
+
+	</ScrollView>
+</RelativeLayout>

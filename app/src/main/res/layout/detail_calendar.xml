@@ -1,0 +1,107 @@
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+		android:id="@+id/bottomSheetContainer"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/bottom_sheet_background"
+		android:orientation="vertical">
+
+		<RelativeLayout android:id="@+id/detail_calendar"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent" >
+
+			<RelativeLayout android:id="@+id/content_container"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" >
+
+				<View   android:id="@+id/_bg__detail_calendar"
+					android:background="@drawable/_bg__detail_calendar_shape"
+					 android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:layout_width="428dp"
+					android:layout_height="790dp" />
+
+
+				<ImageView
+					android:id="@+id/rectangle_10"
+					android:layout_width="428dp"
+					android:layout_height="790dp"
+					android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:alpha="0"
+					android:contentDescription="rectangle_10"
+					android:src="@drawable/rectangle_10" />
+
+				<TextView
+					android:id="@+id/event_details"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="36.5dp"
+					android:layout_marginTop="80dp"
+					android:text="@string/event_details_string"
+					android:textColor="@color/event_details_color"
+					android:textSize="15sp" />
+
+				<TextView
+					android:id="@+id/fiday__april_07"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="37.5dp"
+					android:layout_marginTop="135dp"
+					android:text="Tanggal Acara"
+					android:textColor="@color/event_details_color"
+					android:textSize="15sp" />
+
+				<TextView
+					android:id="@+id/alarm"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="37.5dp"
+					android:layout_marginTop="192dp"
+					android:text="@string/alarm_string"
+					android:textColor="@color/event_details_color"
+					android:textSize="15sp" />
+
+				<TextView
+					android:id="@+id/notes"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="37.5dp"
+					android:layout_marginTop="222dp"
+					android:text="@string/notes_string"
+					android:textColor="@color/event_details_color"
+					android:textSize="15sp" />
+
+				<View   android:id="@+id/line_4"
+					android:background="@drawable/line_4_shape"
+					 android:layout_marginStart="37dp"
+					android:layout_marginTop="170dp"
+					android:layout_width="347dp"
+					android:layout_height="1dp"
+					android:layout_centerHorizontal="true"/>
+
+				<TextView
+					android:id="@+id/_edit"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="320dp"
+					android:layout_marginTop="45dp"
+					android:text="@string/_edit_string"
+					android:textColor="@color/_edit_color"
+					android:textSize="15sp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:id="@+id/jumat_agung"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="37.5dp"
+					android:layout_marginTop="100dp"
+					android:text="Nama Acara"
+					android:textColor="@color/jumat_agung_color"
+					android:textSize="20sp"
+					android:textStyle="bold" />
+
+			</RelativeLayout>
+
+		</RelativeLayout>
+	</LinearLayout>

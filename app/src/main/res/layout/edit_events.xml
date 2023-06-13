@@ -1,0 +1,172 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="wrap_content" >
+
+	<RelativeLayout android:id="@+id/edit_events"
+		android:layout_width="wrap_content" 
+		android:layout_height="match_parent" >
+
+		<RelativeLayout android:id="@+id/content_container" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" >
+
+			<View   android:id="@+id/_bg__edit_events"
+				android:background="@drawable/_bg__edit_events_shape"
+				android:layout_marginStart="0dp"
+				android:layout_marginTop="0dp"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent" />
+
+			<View
+				android:id="@+id/rectangle_11"
+				android:layout_width="match_parent"
+				android:layout_height="786dp"
+				android:background="@drawable/rectangle_11_shape" />
+
+			<View   android:id="@+id/rectangle_12"
+				android:background="@drawable/rectangle_12_shape"
+				 android:layout_marginStart="19dp"
+				android:layout_marginTop="100dp"
+				android:layout_width="387dp"
+				android:layout_height="72dp"
+				android:layout_centerHorizontal="true"/>
+
+
+
+			<EditText
+				android:id="@+id/nama_acara"
+				android:layout_width="350dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="30dp"
+				android:layout_marginTop="103dp"
+				android:hint="Acara"
+				android:textColor="@color/white"
+				android:textSize="15sp" />
+
+			<TextView
+				android:id="@+id/edit_acara"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="161dp"
+				android:layout_marginTop="20dp"
+				android:text="@string/edit_acara_string"
+				android:textColor="@color/jumat_agung_color"
+				android:textSize="15sp" />
+
+			<TextView
+				android:id="@+id/selesai"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="329dp"
+				android:layout_marginTop="20dp"
+				android:text="@string/selesai_string"
+				android:textColor="@color/jumat_agung_color"
+				android:textSize="15sp" />
+
+			<TextView
+				android:id="@+id/_batalkan"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="19dp"
+				android:layout_marginTop="20dp"
+				android:text="@string/_batalkan_string"
+				android:textColor="@color/_batalkan_color"
+				android:textSize="15sp"
+				android:textStyle="bold" />
+
+			<EditText
+				android:id="@+id/lokasi"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="34dp"
+				android:layout_marginTop="145dp"
+				android:hint="@string/lokasi_string"
+				android:textColor="@color/gray"
+				android:textSize="15sp"
+				android:background="@null"/>
+
+			<View   android:id="@+id/rectangle_13"
+				android:background="@drawable/rectangle_13_shape"
+				 android:layout_marginStart="19dp"
+				android:layout_marginTop="200dp"
+				android:layout_width="387dp"
+				android:layout_height="121dp"
+				android:layout_centerHorizontal="true"/>
+
+
+			<View   android:id="@+id/rectangle_14"
+				android:background="@drawable/rectangle_14_shape"
+				android:layout_marginStart="19dp"
+				android:layout_marginTop="370dp"
+				android:layout_width="387dp"
+				android:layout_height="220dp"
+				android:layout_centerHorizontal="true"/>`
+
+			<EditText
+				android:id="@+id/jumat_agung_ek1"
+				android:layout_width="350dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="30dp"
+				android:layout_marginTop="208dp"
+				android:hint="Acara"
+				android:textColor="@color/white"
+				android:textSize="15sp" />
+
+			<EditText
+				android:id="@+id/mulai"
+				android:layout_width="350dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="30dp"
+				android:layout_marginTop="248dp"
+				android:hint="@string/mulai_string"
+				android:textColor="@color/white"
+				android:textSize="15sp" />
+
+			<EditText
+				android:id="@+id/url"
+				android:layout_width="350dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="30dp"
+				android:layout_marginTop="383dp"
+				android:hint="@string/url_string"
+				android:textColor="@color/white"
+				android:textSize="15sp" />
+
+			<EditText
+				android:id="@+id/_catetan"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="33dp"
+				android:layout_marginTop="425dp"
+				android:hint="@string/_catetan_string"
+				android:textColor="@color/white"
+				android:textSize="15sp"
+				android:background="@null"/>
+
+			<EditText
+				android:id="@+id/berakhir"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="33dp"
+				android:layout_marginTop="290dp"
+				android:hint="@string/berakhir_string"
+				android:textColor="@color/white"
+				android:textSize="15sp"
+				android:background="@null"/>
+
+			<Button
+				android:id="@+id/selanjutnya"
+				android:layout_width="390dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal|center"
+				android:layout_centerHorizontal="true"
+				android:layout_marginTop="623dp"
+				android:gravity="center"
+				android:text="@string/selanjutnya_string"
+				android:textColor="@color/selanjutnya_color"
+				android:textSize="22sp"
+				android:background="@drawable/rectangle_14_shape"/>
+
+		</RelativeLayout>
+
+	</RelativeLayout>
+</LinearLayout>

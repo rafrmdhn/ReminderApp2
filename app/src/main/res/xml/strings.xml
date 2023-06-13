@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- all_tasks_page strings -->
+
+	<string name="app_name">Page 1</string>
+	<string name="ek_img_content">ExportKit Image</string>
+	<string name="all_tasks_string">All Tasks</string>
+	<string name="_today_string">Today</string>
+	<string name="tomorrow_string">Tomorrow</string>
+	<string name="upcomming_string">Upcomming</string>
+	<string name="someday_string">Someday</string>
+	<string name="i_want_____string">I  want ...</string>
+</resources>

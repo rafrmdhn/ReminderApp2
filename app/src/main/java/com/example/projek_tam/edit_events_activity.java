@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.content.Intent;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -20,6 +21,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,10 +42,10 @@ public class edit_events_activity extends Activity {
 	private View rectangle_14;
 	private ImageView line_7;
 	private TextView jumat_agung_ek1;
-	private TextView mulai;
+	private EditText mulai;
 	private TextView url;
-	private TextView _catetan;
-	private TextView berakhir;
+	private EditText _catetan;
+	private EditText berakhir;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -61,15 +64,15 @@ public class edit_events_activity extends Activity {
 		rectangle_13 = (View) findViewById(R.id.rectangle_13);
 		rectangle_14 = (View) findViewById(R.id.rectangle_14);
 		jumat_agung_ek1 = (TextView) findViewById(R.id.jumat_agung_ek1);
-		mulai = (TextView) findViewById(R.id.mulai);
+		mulai = (EditText) findViewById(R.id.mulai);
 		url = (TextView) findViewById(R.id.url);
-		_catetan = (TextView) findViewById(R.id._catetan);
-		berakhir = (TextView) findViewById(R.id.berakhir);
+		_catetan = (EditText) findViewById(R.id._catetan);
+		berakhir = (EditText) findViewById(R.id.berakhir);
 
 
 		Intent intent = getIntent();
-		String day = intent.getStringExtra("selectedDay");
-		String monthYear = intent.getStringExtra("selectedMonthYear");
+		String selectedDay = intent.getStringExtra("selectedDay");
+		String selectedMonthYear = intent.getStringExtra("selectedMonthYear");
 
 
 		_batalkan.setOnClickListener(new View.OnClickListener() {
@@ -87,16 +90,25 @@ public class edit_events_activity extends Activity {
 			public void onClick(View v) {
 				String acara = nama_acara.getText().toString();
 				String lok = lokasi.getText().toString();
-				
+				String start = mulai.getText().toString();
+				String end = berakhir.getText().toString();
+				String note = _catetan.getText().toString();
+				Date today = new Date();
+				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+				String tanggal = dateFormat.format(today);
+				String idDoc = selectedDay + " " + selectedMonthYear;
+
 				FirebaseFirestore db = FirebaseFirestore.getInstance();
 				Map<String, Object> date = new HashMap<>();
 				date.put("Acara", acara);
 				date.put("Lokasi", lok);
-				date.put("Mulai", );
-				date.put("Berakhir", );
+				date.put("Mulai", start);
+				date.put("Berakhir", end);
+				date.put("Catatan", note);
+				date.put("Tanggal", idDoc);
 
 
-// Add a new document with a generated ID
+
 				db.collection("Calendar")
 						.add(date)
 						.addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -115,6 +127,8 @@ public class edit_events_activity extends Activity {
 				startActivity(nextScreen);
 				finish();
 			}
+
+
 		});
 
 		selanjutnya.setOnClickListener(new View.OnClickListener() {

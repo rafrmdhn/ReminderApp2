@@ -42,7 +42,7 @@
 					android:textSize="15sp" />
 
 				<TextView
-					android:id="@+id/fiday__april_07"
+					android:id="@+id/tgl_acara"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="37.5dp"
@@ -94,9 +94,9 @@
 					android:id="@+id/jumat_agung"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginLeft="37.5dp"
-					android:layout_marginTop="100dp"
-					android:text="Nama Acara"
+					android:layout_marginLeft="37dp"
+					android:layout_marginTop="103dp"
+					android:text="Tidak Ada Acara"
 					android:textColor="@color/jumat_agung_color"
 					android:textSize="20sp"
 					android:textStyle="bold" />

@@ -15,7 +15,7 @@ public class detail_calendar_activity extends Activity {
 	private View _bg__detail_calendar;
 	private ImageView rectangle_10;
 	private TextView event_details;
-	private TextView fiday__april_07;
+	private TextView tgl_acara;
 	private TextView alarm;
 	private TextView notes;
 	private View line_4;
@@ -33,7 +33,7 @@ public class detail_calendar_activity extends Activity {
 		_bg__detail_calendar = (View) findViewById(R.id._bg__detail_calendar);
 		rectangle_10 = (ImageView) findViewById(R.id.rectangle_10);
 		event_details = (TextView) findViewById(R.id.event_details);
-		fiday__april_07 = (TextView) findViewById(R.id.fiday__april_07);
+		tgl_acara = (TextView) findViewById(R.id.tgl_acara);
 		alarm = (TextView) findViewById(R.id.alarm);
 		notes = (TextView) findViewById(R.id.notes);
 		line_4 = (View) findViewById(R.id.line_4);
@@ -54,9 +54,10 @@ public class detail_calendar_activity extends Activity {
 
 		Intent intent = getIntent();
 		if (intent != null) {
-			int selectedDay = intent.getIntExtra("selectedDay", 0);
+			String selectedDay = intent.getStringExtra("selectedDay");
 			String selectedMonthYear = intent.getStringExtra("selectedMonthYear");
-			fiday__april_07.setText(String.format("Selected Date: %d %s", selectedDay, selectedMonthYear));
+
+			jumat_agung.setText(selectedDay);
 		}
 
 

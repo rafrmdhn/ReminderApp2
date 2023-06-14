@@ -1,5 +1,7 @@
 package com.example.projek_tam;
 
+import static java.security.AccessController.getContext;
+
 import android.app.Activity;
 import android.os.Bundle;
 
@@ -8,6 +10,22 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Intent;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class all_tasks_page_activity extends Activity {
 
@@ -36,15 +54,19 @@ public class all_tasks_page_activity extends Activity {
 	private ImageView _vector_ek11;
 	private TextView i_want____;
 
+	private RecyclerView rViewToday;
+
+	private all_taskAdapter atAdapter;
+	private List<TaskObject> allTask;
+
+
+	private FirebaseFirestore db;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.all_tasks_page);
 
-		
-		_bg__all_tasks_page = (View) findViewById(R.id._bg__all_tasks_page);
-		rectangle_7 = (View) findViewById(R.id.rectangle_7);
 		ellipse_1 = (View) findViewById(R.id.ellipse_1);
 		vector = (ImageView) findViewById(R.id.vector);
 		vector_ek1 = (ImageView) findViewById(R.id.vector_ek1);
@@ -66,6 +88,41 @@ public class all_tasks_page_activity extends Activity {
 		_rectangle_6 = (View) findViewById(R.id._rectangle_6);
 		_vector_ek11 = (ImageView) findViewById(R.id._vector_ek11);
 		i_want____ = (TextView) findViewById(R.id.i_want____);
+
+		allTask = new ArrayList<>();
+		atAdapter = new all_taskAdapter(allTask);
+		rViewToday = findViewById(R.id.today_tasks);
+		rViewToday.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+		rViewToday.setAdapter(atAdapter);
+
+		db = FirebaseFirestore.getInstance();
+		CollectionReference verifRef = db.collection("Calendar");
+		Query query = verifRef.whereEqualTo("Tanggal", "17 June 2023");
+
+		query.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+					@Override
+					public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+						List<TaskObject> taskList = new ArrayList<>();
+
+						for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+							String acara = documentSnapshot.getString("Acara");
+
+							TaskObject to = new TaskObject(acara);
+							taskList.add(to);
+						}
+
+						// Update the adapter with the retrieved product list
+						atAdapter.setTaskList(taskList);
+						atAdapter.notifyDataSetChanged();
+						Toast.makeText(all_tasks_page_activity.this, "Berhasil", Toast.LENGTH_SHORT).show();
+					}
+				})
+				.addOnFailureListener(new OnFailureListener() {
+					@Override
+					public void onFailure(@NonNull Exception e) {
+						// Handle any errors that occurred during data retrieval
+					}
+				});
 	
 		
 //		_today.setOnClickListener(new View.OnClickListener() {

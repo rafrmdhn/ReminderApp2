@@ -44,7 +44,7 @@ public class verified_activity extends Activity {
 
 			public void onClick(View v) {
 
-				Intent nextScreen = new Intent(getApplicationContext(), all_tasks_page_activity.class);
+				Intent nextScreen = new Intent(getApplicationContext(), login_page_activity.class);
 				startActivity(nextScreen);
 
 

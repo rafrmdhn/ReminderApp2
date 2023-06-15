@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 
 
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.content.Intent;
@@ -20,15 +22,18 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class login_page_activity extends AppCompatActivity {
 
 	
 	private View _bg__login_page;
 	private View rectangle_3;
-	private TextView username_ek1;
+	private EditText username_ek1;
 	private View rectangle_5;
-	private TextView password;
+	private EditText katasandi;
 	private TextView hi;
 	private TextView welcome_again_;
 	private TextView please_fill_in_your_correct_details_;
@@ -39,6 +44,7 @@ public class login_page_activity extends AppCompatActivity {
 	private TextView or;
 	private View rectangle_5_ek3;
 	private TextView _create_new_account;
+	private FirebaseFirestore firestore;
 
 	private RelativeLayout google;
 
@@ -51,13 +57,13 @@ public class login_page_activity extends AppCompatActivity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_page);
-
+		firestore = FirebaseFirestore.getInstance();
 		
 		_bg__login_page = (View) findViewById(R.id._bg__login_page);
 		rectangle_3 = (View) findViewById(R.id.rectangle_3);
-		username_ek1 = (TextView) findViewById(R.id.username_ek1);
+		username_ek1 = (EditText) findViewById(R.id.username_ek1);
 		rectangle_5 = (View) findViewById(R.id.rectangle_5);
-		password = (TextView) findViewById(R.id.password);
+		katasandi = (EditText) findViewById(R.id.katasandi);
 		hi = (TextView) findViewById(R.id.hi);
 		welcome_again_ = (TextView) findViewById(R.id.welcome_again_);
 		please_fill_in_your_correct_details_ = (TextView) findViewById(R.id.please_fill_in_your_correct_details_);
@@ -69,16 +75,27 @@ public class login_page_activity extends AppCompatActivity {
 		rectangle_5_ek3 = (View) findViewById(R.id.rectangle_5_ek3);
 		_create_new_account = (TextView) findViewById(R.id._create_new_account);
 		google = findViewById(R.id.google);
-	
-		
+
+
+		login.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				String username = username_ek1.getText().toString().trim();
+				String password = katasandi.getText().toString().trim();
+
+				if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+					Toast.makeText(getApplicationContext(), "Please fill in both username and password", Toast.LENGTH_SHORT).show();
+				} else {
+
+					login();
+				}
+			}
+		});
 		_create_new_account.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-
 				Intent nextScreen = new Intent(getApplicationContext(), create_account_screen_activity.class);
 				startActivity(nextScreen);
-
-
 			}
 		});
 		gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
@@ -144,6 +161,29 @@ public class login_page_activity extends AppCompatActivity {
 		startActivity(intent);
 		finish();
 	}
+	private void login() {
+		String username = username_ek1.getText().toString().trim();
+		String password = katasandi.getText().toString().trim();
+
+		firestore.collection("users")
+				.whereEqualTo("Username", username)
+				.whereEqualTo("Password", password)
+				.get()
+				.addOnCompleteListener(task -> {
+					if (task.isSuccessful()) {
+						QuerySnapshot querySnapshot = task.getResult();
+						if (querySnapshot != null && !querySnapshot.isEmpty()) {
+							navigateToSecondActivity();
+						} else {
+							Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
+						}
+					} else {
+						Toast.makeText(getApplicationContext(), "Failed to retrieve user data", Toast.LENGTH_SHORT).show();
+					}
+				});
+	}
 }
+
+
 	
 	
